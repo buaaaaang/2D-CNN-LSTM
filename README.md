@@ -6,3 +6,7 @@ Zhao, J., Mao, X., & Chen, L. (2019). Speech emotion recognition using deep 1D &
 I applied the model to Korean speech dataset. The data was from [here][link]. It is 감정 분류를 위한 대화 음성 데이터셋 of AIHUB.
 
 [link]: https://aihub.or.kr/keti_data_board/language_intelligence
+
+You can see more information on [my blog][my-blog].
+
+[my-blog]: https://buaaaaang.github.io/machinelearning/2021/05/07/2D-CNN-LSTM.html

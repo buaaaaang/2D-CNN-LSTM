@@ -30,14 +30,23 @@ def model():#hp):
     model.add(layers.Activation('elu'))
     model.add(layers.MaxPooling2D(pool_size=(4,4), strides=(4,4)))
 
-    model.add(layers.Reshape((-1,128)))
-
-    model.add(layers.LSTM(units=unit))
-
-    model.add(layers.Dense(units=5,activation='softmax'))
     
-    #opt = optimizers.Adam(lr=0.0001)
-    opt = optimizers.SGD(lr = 0.0001, decay=1e-6, momentum=0.9, nesterov=True)
+    #LSTM
+    model.add(layers.Reshape((-1,128)))
+    model.add(layers.LSTM(units=unit))
+    model.add(layers.Dense(units=5,activation='softmax'))
+    opt = optimizers.Adam(learning_rate = 0.00067)
+    
+
+    '''
+    #Dense
+    model.add(layers.Flatten())
+    model.add(layers.Dense(units=88,activation='relu'))
+    model.add(layers.Dense(units=120,activation='relu'))
+    model.add(layers.Dense(units=K,activation='softmax'))
+    opt = optimizers.Adam(learning_rate=0.00026)
+    '''
+
     model.compile(optimizer=opt,loss='categorical_crossentropy',metrics=['categorical_accuracy'])
 
     return model

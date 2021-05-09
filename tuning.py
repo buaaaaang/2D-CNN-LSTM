@@ -11,16 +11,6 @@ from numpy import newaxis
 def load_data():
     file = "C:/Users/LG/Desktop/skt/KoreanSpeechDataForSER/2D.hdf5"
     hf = h5py.File(file,'r')
-    '''
-    x_tr = (hf['x'][:16000])[:,:,:,newaxis]
-    x_v = (hf['x'][16000:20000])[:,:,:,newaxis]
-    x_t = (hf['x'][20000:])[:,:,:,newaxis]
-
-    y = hf['y']
-    y_tr = y[:16000]
-    y_v = y[16000:20000]
-    y_t = y[20000:]
-    '''
 
     x_tr = (hf['x'][:16])[:,:,:,newaxis]
     x_v = (hf['x'][16:20])[:,:,:,newaxis]
